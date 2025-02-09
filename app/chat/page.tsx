@@ -3,6 +3,7 @@
 
 import { ChatWindow } from '@/components/chat/ChatWindow'
 import { ChatInput } from '@/components/chat/ChatInput'
+import Header from '@/components/layout/Header'
 import { auth } from '@/lib/firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useRouter } from 'next/navigation'
@@ -20,19 +21,7 @@ export default function ChatPage() {
   return (
     <div className="flex flex-col h-screen bg-black">
       {/* Header */}
-      <header className="bg-gray-900 border-b border-green-500/20 p-4">
-        <div className="flex justify-between items-center max-w-7xl mx-auto">
-          <h1 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600">
-            SPARK AI
-          </h1>
-          <button
-            onClick={() => auth.signOut()}
-            className="text-gray-400 hover:text-white transition-colors"
-          >
-            Sign Out
-          </button>
-        </div>
-      </header>
+      <Header />
 
       {/* Main chat area */}
       <div className="flex-1 overflow-hidden">

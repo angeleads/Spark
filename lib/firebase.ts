@@ -14,9 +14,9 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+const app = !getApps().length ? initializeApp(firebaseConfig) : getApp()
+const db = getFirestore(app)
+const auth = getAuth(app)
 
 // Set persistence to LOCAL (survives browser restarts)
 auth.setPersistence(browserLocalPersistence);

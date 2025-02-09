@@ -51,7 +51,6 @@ export function AuthForm({ isLogin, setIsLogin }: AuthFormProps) {
       await new Promise((resolve) => setTimeout(resolve, 1000));
       
       toast.success(isLogin ? "Welcome back!" : "Account created successfully!");
-      console.log("Redirecting to /chat");
       router.push("/chat");
     } catch (error) {
       if (error instanceof Error) {

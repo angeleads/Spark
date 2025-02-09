@@ -14,8 +14,6 @@ export default function ChatLayout({
   const { user, loading } = useAuth()
   const router = useRouter()
 
-  console.log("Chat Layout - User:", user);
-
   useEffect(() => {
     if (!loading && !user) {
       router.push('/auth')
