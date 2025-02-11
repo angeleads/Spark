@@ -138,11 +138,7 @@ export function ChatWindow() {
               
             </div>
           </div>
-          {message.role === "user" && (
-            <div className="w-8 h-8 rounded-full flex items-center justify-center bg-gradient-to-r from-green-600 to-green-700">
-              <span className="text-white text-sm">A</span>
-            </div>
-          )}
+          
         </div>
       ))}
       {isTyping && (

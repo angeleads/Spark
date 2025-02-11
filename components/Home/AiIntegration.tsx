@@ -5,7 +5,7 @@ import { Sparkles, Brain, Zap, Heart } from "lucide-react";
 export function AiIntegration() {
   return (
     <section className="relative py-32 px-4">
-      <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 to-transparent" />
+      <div className="absolute inset-0 bg-black" />
       <div className="max-w-6xl mx-auto relative">
         <motion.div
           initial={{ opacity: 0 }}
@@ -25,7 +25,7 @@ export function AiIntegration() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          
+
           {/* Interactive Chat Preview */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -59,11 +59,11 @@ export function AiIntegration() {
                     </div>
                   </div>
                 </div>
-                <div className="flex gap-4 items-start justify-end">
-                  <div className="flex-1">
-                    <div className="bg-green-500/10 rounded-2xl p-4 inline-block ml-auto">
+                <div className="flex gap-4 items-start justify-end pt-4 pb-4">
+                  <div className="flex justify-end items-end">
+                    <div className=" bg-green-500/10 rounded-2xl p-4">
                       <p className="text-gray-300">
-                        Can you help me with data analysis?
+                        I need you to help me.
                       </p>
                     </div>
                   </div>
@@ -78,19 +78,19 @@ export function AiIntegration() {
                   <div className="flex-1">
                     <div className="bg-gray-800 rounded-2xl p-4">
                       <p className="text-gray-300">
-                        I would be happy to help with your data analysis! I can
+                        I would be happy to help! I can
                         assist with:
                       </p>
                       <ul className="mt-2 space-y-1 text-gray-400">
-                        <li>• Statistical analysis</li>
-                        <li>• Data visualization</li>
-                        <li>• Pattern recognition</li>
-                        <li>• Trend identification</li>
+                        <li>• Understanding your emotions</li>
+                        <li>• Managing your time effectively</li>
+                        <li>• Building positive relationships</li>
+                        <li>• Setting and achieving goals</li>
                       </ul>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 pt-8">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" />
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce [animation-delay:0.2s]" />
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce [animation-delay:0.4s]" />

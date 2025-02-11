@@ -10,7 +10,7 @@ import { AiIntegration } from '@/components/Home/AiIntegration';
 const ParticleBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,255,127,0.1)_0%,transparent_70%)]" />
+      <div className="absolute w-full h-full bg-[radial-gradient(circle_at_center,rgba(0,255,127,0.1)_0%,transparent_50%)]" />
       <svg className="absolute w-full h-full opacity-30">
         <defs>
           <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -197,9 +197,11 @@ const SparkLandingPage = () => {
           <p className="text-xl text-gray-400 mb-12">
             Join thousands of users already experiencing the future of AI interaction
           </p>
-          <button className="px-12 py-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl text-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 flex items-center gap-3 mx-auto">
+          <button 
+          onClick={() => window.location.href = "/chat"}
+          className="px-12 py-6 bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl text-xl font-semibold hover:from-green-600 hover:to-emerald-700 transition-all transform hover:scale-105 flex items-center gap-3 mx-auto">
             <Sparkles className="w-6 h-6" />
-            Get Started for Free
+            SPARK AI
           </button>
         </motion.div>
       </section>
