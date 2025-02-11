@@ -1,7 +1,5 @@
 // components/chat/ChatInput.tsx
-'use client'
-
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { auth } from '@/lib/firebase'
 import toast from 'react-hot-toast'
@@ -10,10 +8,11 @@ export function ChatInput() {
   const [user] = useAuthState(auth)
   const [message, setMessage] = useState('')
   const [isLoading, setIsLoading] = useState(false)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!message.trim() || !user) return
+  const handleSubmit = async (e?: React.FormEvent) => {
+    e?.preventDefault()
+    if (!message.trim() || !user || isLoading) return
   
     setIsLoading(true)
     try {
@@ -39,6 +38,26 @@ export function ChatInput() {
     } finally {
       setIsLoading(false)
       setMessage('')
+      // Reset textarea height
+      if (textareaRef.current) {
+        textareaRef.current.style.height = 'auto'
+      }
+    }
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault()
+      handleSubmit()
+    }
+  }
+
+  const handleTextareaInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessage(e.target.value)
+    // Auto-resize textarea
+    if (textareaRef.current) {
+      textareaRef.current.style.height = 'auto'
+      textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`
     }
   }
 
@@ -46,18 +65,20 @@ export function ChatInput() {
     <div className="p-4 border-t border-green-500/20">
       <form onSubmit={handleSubmit} className="max-w-4xl mx-auto">
         <div className="flex space-x-4">
-          <input
-            type="text"
+          <textarea
+            ref={textareaRef}
             value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            placeholder="Type your message..."
-            className="flex-1 bg-gray-900 text-white rounded-lg px-4 py-2 border border-green-500/20 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all"
+            onChange={handleTextareaInput}
+            onKeyDown={handleKeyDown}
+            placeholder="Type your message... (Press Enter to send, Shift+Enter for new line)"
+            className="flex-1 bg-gray-900 text-white rounded-lg px-4 py-2 border border-green-500/20 focus:border-green-500 focus:ring-2 focus:ring-green-500/20 transition-all min-h-[44px] max-h-[200px] resize-none"
             disabled={isLoading}
+            rows={1}
           />
           <button
             type="submit"
             disabled={isLoading}
-            className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all disabled:opacity-50"
+            className="px-6 py-2 bg-gradient-to-r from-green-500 to-emerald-600 text-white rounded-lg hover:from-green-600 hover:to-emerald-700 transition-all disabled:opacity-50 h-[44px]"
           >
             {isLoading ? 'Sending...' : 'Send'}
           </button>

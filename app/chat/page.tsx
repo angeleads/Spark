@@ -1,21 +1,21 @@
 // app/chat/page.tsx
-'use client'
+"use client";
 
-import { ChatWindow } from '@/components/chat/ChatWindow'
-import { ChatInput } from '@/components/chat/ChatInput'
-import Header from '@/components/layout/Header'
-import { auth } from '@/lib/firebase'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { useRouter } from 'next/navigation'
+import { ChatWindow } from "@/components/chat/ChatWindow";
+import { ChatInput } from "@/components/chat/ChatInput";
+import Header from "@/components/layout/Header";
+import { auth } from "@/lib/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useRouter } from "next/navigation";
 
 export default function ChatPage() {
-  const [user] = useAuthState(auth)
-  const router = useRouter()
+  const [user] = useAuthState(auth);
+  const router = useRouter();
 
   // Redirect if not authenticated
   if (!user) {
-    router.push('/auth')
-    return null
+    router.push("/auth");
+    return null;
   }
 
   return (
@@ -31,5 +31,5 @@ export default function ChatPage() {
         </div>
       </div>
     </div>
-  )
+  );
 }
