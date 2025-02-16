@@ -1,12 +1,12 @@
 # Spark AI
 
-<p align="center">
+<h1 align="center">
   <em>🌟 SPARK AI</em>
-</p>
+</h1>
 
-***<h1 align="center">
+<p align="center">
   Your AI-powered web companion that brings a spark to digital interactions
-</h1>***
+</p>
 
 <p align="center">
   <a href="#features">Features</a> •
