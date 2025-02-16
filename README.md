@@ -1,7 +1,7 @@
 # Spark AI
 
 <p align="center">
-  <img src="public/logo/logo-complete.jpg" alt="Spark Logo" width="200" />
+  <img src="public/logos/logo-complete.jpg" alt="Spark Logo" width="200" />
 </p>
 
 <p align="center">
