@@ -1,7 +1,7 @@
 # Spark AI Companion
 
 <p align="center">
-  <img src="public/spark-logo.png" alt="Spark Logo" width="200" />
+  <img src="public/logo/logo-complete.jpg" alt="Spark Logo" width="200" />
 </p>
 
 <p align="center">
