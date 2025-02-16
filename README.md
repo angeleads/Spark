@@ -1,12 +1,12 @@
 # Spark AI
 
 <p align="center">
-  <img src="public/logos/logo-complete.jpg" alt="Spark Logo" width="200" />
+  <em>🌟 SPARK AI</em>
 </p>
 
-<p align="center">
-  <em>Your AI-powered web companion that brings warmth to digital interactions</em>
-</p>
+***<h1 align="center">
+  Your AI-powered web companion that brings a spark to digital interactions
+</h1>***
 
 <p align="center">
   <a href="#features">Features</a> •
