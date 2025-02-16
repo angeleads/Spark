@@ -80,7 +80,7 @@ export async function POST(request: Request) {
     batch.create(conversationRef.doc(), {
       role: "assistant",
       content: responseText,
-      timestamp: new Date(timestamp.getTime() + 1000), // Ensure correct ordering
+      timestamp: new Date(timestamp.getTime() + 1000),
     });
 
     await batch.commit();
@@ -88,15 +88,25 @@ export async function POST(request: Request) {
     return NextResponse.json({
       response: responseText,
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("API Error:", error);
-    return NextResponse.json(
-      {
-        error: "Internal Server Error",
-        message: error.message,
-        details: error.response?.data,
-      },
-      { status: 500 }
-    );
+    if (error instanceof Error) {
+      return NextResponse.json(
+        {
+          error: "Internal Server Error",
+          message: error.message,
+          details: (error as { response?: { data?: string } }).response?.data,
+        },
+        { status: 500 }
+      );
+    } else {
+      return NextResponse.json(
+        {
+          error: "Internal Server Error",
+          message: "An unknown error occurred",
+        },
+        { status: 500 }
+      );
+    }
   }
 }

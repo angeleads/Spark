@@ -34,7 +34,11 @@ export function ChatInput() {
   
     } catch (error) {
       console.error('Full Error:', error)
-      toast.error(error.message || 'An unexpected error occurred')
+      if (error instanceof Error) {
+        toast.error(error.message || 'An unexpected error occurred')
+      } else {
+        toast.error('An unexpected error occurred')
+      }
     } finally {
       setIsLoading(false)
       setMessage('')

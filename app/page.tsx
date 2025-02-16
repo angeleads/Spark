@@ -3,7 +3,7 @@
 'use client'
 
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Brain, Shield, Sparkles, MessageCircle, Code, Zap, ChevronDown, Github } from 'lucide-react';
 import { AiIntegration } from '@/components/Home/AiIntegration';
 
@@ -24,14 +24,12 @@ const ParticleBackground = () => {
 };
 
 const SparkLandingPage = () => {
-  const { scrollYProgress } = useScroll();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
-  const yBg = useTransform(scrollYProgress, [0, 1], ['0%', '50%']);
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden">
