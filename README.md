@@ -1,5 +1,3 @@
-# Spark AI
-
 <h1 align="center">
   <em>🌟 SPARK AI</em>
 </h1>
