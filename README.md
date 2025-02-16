@@ -1,4 +1,4 @@
-# Spark AI Companion
+# Spark AI
 
 <p align="center">
   <img src="public/logo/logo-complete.jpg" alt="Spark Logo" width="200" />
@@ -19,7 +19,7 @@
 
 ## Overview
 
-Spark is an AI-powered companion designed to bring warmth and engagement to digital interactions. It creates meaningful conversations by remembering user preferences and past interactions, offering everything from casual chats to emotional support.
+🌟 Spark is an AI-powered companion designed to bring warmth and engagement to digital interactions. It creates meaningful conversations by remembering user preferences and past interactions, offering everything from casual chats to emotional support.
 
 Through advanced language models, Spark adapts its personality to each user, providing personalized responses, mood-based support, and entertainment through jokes and fun facts. The project aims to create a judgment-free space where users can freely express themselves while enjoying the company of an AI friend that learns and grows with them over time.
 
